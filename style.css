@@ -144,13 +144,18 @@ body{
     gap: 20px;
     height: 80px;
 }.nombre div{
-    width: 15%;
+    width: 20%;
     text-align: center;
     align-content: center;
     border: none;
     border-radius: 5px;
     background-color: rgb(191, 123, 35);
-    height: 30px;
+    height: 40px;
+}.nombre button{
+    width: 30px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: rgb(142, 142, 142);
 }
 /* page 3 or section 3 */
 .Informations-participants{
@@ -215,13 +220,12 @@ body{
 .Remember-forget label input{
     margin-right: 12px;
 }
-.Remember-forget a{
-    color: rgb(19, 2, 2);
-}.login{
+.login{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 .wraper .btn{
     width:80%;
@@ -237,17 +241,11 @@ body{
     color: white;
     font-weight: 600;
 }
-.wraper .register-link{
-    font-size:14.5px;
-    text-align:center;
-    margin: 20px 0 15px;
-}.register-link a{
-    font-size: 18px;
-    text-decoration: underline;
-    color: rgb(168, 25, 25);
-}
-.register-link p{
-    color:rgb(45, 46, 48);
-    text-decoration:none;
-    font-weight: 600;
+/* class add by js */
+.affiche{
+    width: 160px;
+    height: fit-content;
+    margin: -10px auto;
+    border-radius: 5px;
+
 }

@@ -30,51 +30,55 @@ reserveButtons.forEach((btn) => {
       places: eventCard.querySelectorAll("p")[2].textContent,
       prix: eventCard.querySelectorAll("p")[3].textContent
     };
-
     reservation.evenement = eventData;
     console.log("Événement choisi :", reservation.evenement);
-    const data = localStorage.setItem("reserve", JSON.stringify(reservation.evenement));
-    console.log(data.titre);
     choix.style.display = "none";
     billet.style.display = "block";
-    InformationsParticipants.style.display = "none";
-
     firstCircle.style.backgroundColor = "#078E51";
     firstLine.style.backgroundColor = "#078E51";
 
     updateBilletSection();
   });
 });
-
+let e;
 function updateBilletSection() {
   const billetContent = billet.querySelector(".billets-content");
-  const e = data;
+  e = reservation.evenement;
 
-  billetContent.innerHTML = `
+    billetContent.innerHTML = `
     <h3>${e.titre}</h3>
     <p>${e.date}</p>
     <p>${e.lieu}</p>
     <p>${e.places}</p>
     <p>${e.prix}</p>
-  `;
+    `;
 }
-
 let ticketCount = 1;
-const ticketDisplay = document.querySelector(".nombre div:nth-child(2)");
-const minusBtn = document.querySelector(".nombre div:nth-child(1)");
-const plusBtn = document.querySelector(".nombre div:nth-child(3)");
-
+const nombre = document.querySelector(".nombre");
+const [minusBtn, ticketDisplay, plusBtn] = nombre.children;//even selector//
+let afficheMsg;
 plusBtn.addEventListener("click", () => {
-  ticketCount++;
-  ticketDisplay.textContent = ticketCount;
-  reservation.billets = ticketCount;
-});
+  if (ticketCount >= +e.places ) {
+    afficheMsg = document.querySelector("#affiche-msg");
+    afficheMsg.classList.add('affiche');
+    afficheMsg.style.display="block";
+   afficheMsg.innerHTML=`aucun billet restant !!!`;
+  }
+  else {
+    ticketCount++;
+    ticketDisplay.textContent = ticketCount;
+    reservation.billets = ticketCount;
+    console.log(reservation.billets);
+  
+  }
 
+});
 minusBtn.addEventListener("click", () => {
   if (ticketCount > 1) {
     ticketCount--;
     ticketDisplay.textContent = ticketCount;
     reservation.billets = ticketCount;
+    afficheMsg.style.display="none";
   }
 });
 
@@ -85,8 +89,6 @@ function nextPage(index) {
 
     secondCircle.style.backgroundColor = "#078E51";
     secondLine.style.backgroundColor = "#078E51";
-
-    buildParticipantForms();
   }
 }
 prevButtons.forEach(btn => {
@@ -100,3 +102,4 @@ prevButtons.forEach(btn => {
     }
   });
 });
+
