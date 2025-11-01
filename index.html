@@ -32,7 +32,7 @@
           <p>Olympia, Paris</p>
           <p>1</p>
           <p>45€ par billet</p>
-          <button class="choix1" onclick="nextPage()">reserve</button>
+          <button class="choix1">reserve</button>
         </div>
         <div class="evenment1" id="deuxieme-evenment">
           <h4>Festival de Musique Électronique</h4>
@@ -40,7 +40,7 @@
           <p>Lyon</p>
           <p>5</p>
           <p>80€ par billet</p>
-          <button class="choix1" onclick="nextPage()" type="hhhh">reserve</button>
+          <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="troixieme-evenment">
           <h4>Conférence Tech Innovation</h4>
@@ -48,7 +48,7 @@
           <p>Olympia, Paris</p>
           <p>3</p>
           <p>50€ par billet</p>
-          <button class="choix1" onclick="nextPage()" type="hhhh">reserve</button>
+          <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="quatrieme-evenment">
           <h4>Spectacle de Théâtre Classique</h4>
@@ -56,7 +56,7 @@
           <p>Marseille</p>
           <p>10</p>
           <p>45€ par billet</p>
-          <button class="choix1" onclick="nextPage()" type="hhhh">reserve</button>
+          <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="sinqieme-evenment">
           <h4>Festival de Jazz de Paris</h4>
@@ -64,7 +64,7 @@
           <p>Olympia, Paris</p>
           <p>7</p>
           <p>35€ par billet</p>
-          <button class="choix1" onclick="nextPage()" type="hhhh">reserve</button>
+          <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1">
           <h4>Workshop Cuisine Française</h4>
@@ -72,7 +72,7 @@
           <p>Lyon</p>
           <p>8</p>
           <p>45€ par billet</p>
-          <button class="choix1" onclick="nextPage()" type="hhhh">reserve</button>
+          <button class="choix1"" type="hhhh">reserve</button>
         </div>
       </div>
     </div>
@@ -96,38 +96,24 @@
         </div>
         <div id="affiche-msg"></div>
     </div>
-    <div class="next-page">
-      <button id="button2">previus</button>
-      <button onclick="nextPage(1)" >next</button>
+    <div class="next-page" id="next-page-3">
+      <button class="button2">previus</button>
+      <button class="nextbtn"  >next</button>
     </div>
   </section>
   <section class="Informations-participants">
     <h2>Informations des participants</h2>
     <p>Veuillez renseigner les informations pour Concert de Rock ?</p>
+    <div class="particepent" id="particepent">
+    </div>
               <div class="wraper">
-                <div class="inscription">
-                    <form action="" class="inscription-form">
-                        <div class="input-box">
-                            <input type="text" placeholder="username">
-                        </div>
-                        <div class="input-box">
-                            <input type="email" placeholder="enter your email">
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="enter your Nekname">
-                        </div>
-                        <div class="input-box">
-                            <input type="password" placeholder="password">
-                        </div>
-                        <div class="login">
-                            <button type="submit" class="btn">Ajouter ce participant </button>
-                        </div>
-                    </form>
+                <div class="inscription" id="inscription">
+
                 </div>
             </div>
         <div class="next-page">
-      <button id="button2">previus</button>
-      <button onclick="nextPage(1)" >next</button>
+      <button class="button2">previus</button>
+      <button class="nextbtn" >next</button>
     </div>
   </section>
 <script src="script.js"></script>
