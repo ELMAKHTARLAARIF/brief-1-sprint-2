@@ -4,16 +4,19 @@
     scroll-behavior: smooth;
 }
 body{
-    background-image: url(devarticle.png);
+    background-color: #e5e8e8;
     background-repeat: no-repeat;
     background-size: cover;
     height:max-content;
 }
 .evenement-section{
     height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }header{
     height: 20%;
     margin: 10px;
+    font-family: 'Bebas Neue', sans-serif;
 }.cercls{
     margin-top:10px ;
     height: 30%;
@@ -52,10 +55,18 @@ body{
     height: 40%;
     border-radius: 10px;
     padding: 15px;
-    border: .1rem solid rgb(60, 58, 58);
-    background-color: rgb(203, 205, 205);
+    border: none;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.137);
+    background: linear-gradient(to bottom right, rgb(80, 135, 130), rgb(182, 244, 255));
     position: relative;
     color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+.evenment1:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.267);
+    transform: translateY(-5px);
 }
 .evenment1 h4{
     margin-top:-10px;
@@ -67,9 +78,10 @@ body{
     height: 30px;
     position: absolute;
     bottom: 10px;
-    left: 35px;
+    left: 40px;
     border-radius: 10px;
-    background-color: blue;
+    border: .5px solid black;
+    background-color: rgb(120, 213, 229);
     color: white;
     text-transform: uppercase;
     font-weight: 700;
@@ -95,19 +107,21 @@ body{
 }.billes-position{
     width: 95%;
     height: 70%;
-    border: 1px solid black;
+    border:none;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background-color: antiquewhite;
 
 }.billets-content{
     width: 90%;
     height: 80%;
     border-radius: 10px;
-    background-color: rgb(211, 202, 202);
-    border: 1px solid rgb(155, 129, 129);
+ background: linear-gradient(to bottom right, rgb(80, 135, 130), rgb(182, 244, 255));
+    border-left: 4px solid rgb(79, 78, 78);
+    border-bottom: 4px solid rgb(93, 90, 90);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.137);
+    overflow-y: auto;
 }.billets-content h3{
     margin: 20px;
 }.billets-content p{
@@ -123,16 +137,25 @@ body{
     align-items: center;
     justify-content: space-around;
 
-}.next-page button,#button2{
+}.next-page .nextbtn{
     width: 120px;
     height: 40px;
     border: none;
     border-radius: 5px;
-    background-color: blue;
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.137);
+    background-color: rgb(82, 199, 253);
     color: white;
     font-weight: 700;
     text-transform: uppercase;
-}#button2{
+}.next-page .button2{
+    width: 120px;
+    height: 40px;
+    border: none;
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.137);
+    border-radius: 5px; 
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
     background-color: rgb(137, 137, 137);
 }.nombre-billets{
     height: 120px;
@@ -149,7 +172,8 @@ body{
     align-content: center;
     border: none;
     border-radius: 5px;
-    background-color: rgb(191, 123, 35);
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.137);
+    background-color: rgb(119, 215, 207);
     height: 40px;
 }.nombre button{
     width: 30px;
@@ -172,7 +196,6 @@ body{
 }
 .inscription{
   width: 100%;
-  background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,8 +208,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(185, 25, 129, 0.808);
-    background-color: rgb(208, 208, 208)
+    border-left:3px solid black;
+   background: linear-gradient(to bottom right, rgb(80, 135, 130), rgb(182, 244, 255));
+    padding: 20px 0;
 }
 .wraper h1{
     font-size: 40px;
@@ -210,8 +234,10 @@ color: red;
     width: 80%;
     height: 80%;
     border: none;
+    border-left: 4px solid rgb(8, 14, 15);
+    border-bottom: 4px solid rgb(8, 14, 15);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.137);
     outline: none;
-    border: 2px solid rgb(61, 61, 61);
     text-align: center;
 }
 .wraper .Remember-forget{
@@ -233,19 +259,23 @@ color: red;
     margin-bottom: 10px;
 }
 .wraper .btn{
-    width:80%;
+    width:80%;    text-align: center;
+        align-content: center;
     height:45px;
     border:none;
     outline: none;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgb(3, 11, 233);
+    box-shadow: 0 0 10px rgb(29, 150, 172);
     cursor: pointer;
     font-size: 16px;   
     margin-top:20px;
-    background-color:#0606d4;
+    background-color:#25b2d5;
     color: white;
     font-weight: 600;
-}.particepent{
+}.btn:hover{
+    box-shadow: 0 0 15px rgb(17, 18, 17);
+}
+.particepent{
     width: 90%;
     height: 50px;
     margin: 0 auto;
@@ -257,7 +287,7 @@ color: red;
     border-radius: 10px;
     border: 1px solid black;
 }.particepent :nth-child(2){
-    color: blueviolet;
+    color: rgb(62, 2, 119);
 }
 /* class add by js */
 .affiche{
@@ -266,4 +296,80 @@ color: red;
     margin: -10px auto;
     border-radius: 5px;
 
+}#confirmation{
+    width: 100%;
+    height: 100vh;
+    display: none;
+}.details-reservation{
+  width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+  padding: 10px;
+  border-left: 3px solid black;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, rgb(80, 135, 130), rgb(182, 244, 255));
+}
+.details-reservation h2{
+    margin-bottom: 10px;
+}
+.details-reservation p{
+    margin: 5px 0;
+}
+#details-participants {
+  width: 80%;
+
+  margin: 0 auto;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 10px;
+}
+.participant-info{
+    border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.137);
+    padding: 10px;
+    background-color: rgb(108, 181, 177);
+    font-weight: 700;
+    border-radius: 10px;
+  margin: 10px 0;
+}
+footer{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+footer p{
+    margin: 0;
+    font-size: 14px;
+}
+.social-media a{
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}.social-media a:hover{
+    text-decoration: underline;
+    color: red;
+}
+@media screen and (min-width: 1024px) {
+    .evenment1{
+        width: 30%;
+        height: 50%;
+    }
+    .evenment1 button{
+        left: 170px;
+    }.billets-content{
+        width: 50%;
+    }.inscription-form{
+        width: 50%;
+    }
+    .nombre div{
+        width: 10%;
+    }
 }
