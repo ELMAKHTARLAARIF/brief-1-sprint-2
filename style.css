@@ -348,14 +348,10 @@ footer p{
     margin: 0;
     font-size: 14px;
 }
-.social-media a{
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 14px;
-}.social-media a:hover{
-    text-decoration: underline;
-    color: red;
+#confirmer{
+
+    background-color: rgb(8, 175, 69);
+
 }
 @media screen and (min-width: 1024px) {
     .evenment1{

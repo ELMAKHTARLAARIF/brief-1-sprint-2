@@ -58,6 +58,8 @@ nextButton.forEach(btn => {
 confirmerButton.addEventListener("click", () => {
   alert("Réservation confirmée ! Merci.");
   fourthCircle.style.backgroundColor = "#0fa038ff";
+  confirmationSection.style.display = "none";
+  choix.style.display = "block";
 });
 
 prevButtons.forEach(btn => {
@@ -222,10 +224,9 @@ form.addEventListener("submit", (event) => {
     incrementIndex.textContent = `${index}/${ticketCount} participants enregistrés`;
     form.reset();
   }
-
-  showData();
 });
-document.querySelector(".Informations-participants .nextbtn").addEventListener("click", () => {
+const btnshowData = document.querySelector(".Informations-participants .nextbtn");
+btnshowData.addEventListener("click", () => {
   const detailsReservation = document.getElementById("details-reservation");
   detailsReservation.innerHTML = `
     <h3>${reservation.evenement.titre}</h3>
