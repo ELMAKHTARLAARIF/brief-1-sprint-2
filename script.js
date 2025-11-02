@@ -58,8 +58,7 @@ nextButton.forEach(btn => {
 confirmerButton.addEventListener("click", () => {
   alert("Réservation confirmée ! Merci.");
   fourthCircle.style.backgroundColor = "#0fa038ff";
-  confirmationSection.style.display = "none";
-  choix.style.display = "block";
+window.location.reload();
 });
 
 prevButtons.forEach(btn => {
@@ -203,7 +202,7 @@ form.addEventListener("submit", (event) => {
     valid = false;
     return;
   }
-  const phone_check = /^\+?[0-9]{7,15}$/;
+  const phone_check = /^\+?[0-9]{10,14}$/;
   if (!phone_check.test(phone.value)) {
     phoneError.textContent = "Numéro de téléphone invalide.";
     phone.style.border = "2px solid red";
