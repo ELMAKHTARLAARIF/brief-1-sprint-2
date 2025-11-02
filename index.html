@@ -5,22 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>etttt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitcount+Grid+Single:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <section class="evenement-section">
     <header>
-      <h1>Choix de l’événement</h1>
-      <p>Réservez vos places pour les meilleurs événements</p>
+      <h1>Event Selection</h1>
+      <p>Book your tickets for the best events</p>
       <div class="cercls">
         <div class="cercle" id="firstCercle">1</div>
         <div class="line" id="line1"></div>
         <div class="cercle" id="secondCercle">2</div>
         <div class="line" id="line2"></div>
-        <div class="cercle">3</div>
-        <div class="line"></div>
-        <div class="cercle">4</div>
+        <div class="cercle" id="thirdCercle">3</div>
+        <div class="line" id="line3"></div>
+        <div class="cercle" id="fourthCercle">4</div>
       </div>
     </header>
     <div class="choix" id="choix">
@@ -31,7 +32,7 @@
           <p>15/11/2025</p>
           <p>Olympia, Paris</p>
           <p>1</p>
-          <p>45€ par billet</p>
+          <p>45 € par billet</p>
           <button class="choix1">reserve</button>
         </div>
         <div class="evenment1" id="deuxieme-evenment">
@@ -39,7 +40,7 @@
           <p>22 novembre 2025</p>
           <p>Lyon</p>
           <p>5</p>
-          <p>80€ par billet</p>
+          <p>80 € par billet</p>
           <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="troixieme-evenment">
@@ -47,7 +48,7 @@
           <p>10 novembre 2025</p>
           <p>Olympia, Paris</p>
           <p>3</p>
-          <p>50€ par billet</p>
+          <p>50 € par billet</p>
           <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="quatrieme-evenment">
@@ -55,7 +56,7 @@
           <p>18 novembre 2025</p>
           <p>Marseille</p>
           <p>10</p>
-          <p>45€ par billet</p>
+          <p>45 € par billet</p>
           <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1" id="sinqieme-evenment">
@@ -63,7 +64,7 @@
           <i class="fa-solid fa-calendar-days"><p>15/11/2025</p></i>
           <p>Olympia, Paris</p>
           <p>7</p>
-          <p>35€ par billet</p>
+          <p>35 € par billet</p>
           <button class="choix1" type="hhhh">reserve</button>
         </div>
         <div class="evenment1">
@@ -71,8 +72,8 @@
           <p>25 novembre 2025</p>
           <p>Lyon</p>
           <p>8</p>
-          <p>45€ par billet</p>
-          <button class="choix1"" type="hhhh">reserve</button>
+          <p>45 € par billet</p>
+          <button class="choix1" type="hhhh">reserve</button>
         </div>
       </div>
     </div>
@@ -116,6 +117,24 @@
       <button class="nextbtn" >next</button>
     </div>
   </section>
+  <section id="confirmation">
+    <h2>Confirmation de la réservation</h2>
+    <p>Vérifiez les détails de votre réservation pour Concert de Rock ?</p>
+    <div class="details-reservation" id="details-reservation">
+      <div id="details-participants" class="details-participants">
+        <h3>Informations des participants:</h3>
+        </p>
+      </div>
+    </div>
+    <div class="next-page">
+      <button class="button2">previus</button>
+      <button class="nextbtn" id="confirmer">confirmer</button>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 Event Booking. All rights reserved.</p>
+    <p>Designed by EL MAKHTAR LAARIF</p>
+  </footer>
 <script src="script.js"></script>
 </body>
 
