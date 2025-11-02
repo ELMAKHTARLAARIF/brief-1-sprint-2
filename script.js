@@ -218,6 +218,3 @@ const phoneError = document.getElementById("phone_error");
   }
 });
 
-function enregestrieParticipants() {
-  // cree array kat2afichee formula we9tma 3mer formula li 9bel 3la hssab ticket
-}
