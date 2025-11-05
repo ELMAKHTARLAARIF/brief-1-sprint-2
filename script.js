@@ -14,13 +14,9 @@ const thirdLine = document.getElementById("line3");
 const fourthCircle = document.getElementById("fourthCercle");
 const confirmerButton = document.getElementById("confirmer");
 let reservation = {
-  evenement: null,
-  billets: 1,
+  evenement: [],
   participants: []
 };
-
-billet.style.display = "none";
-InformationsParticipants.style.display = "none";
 
 reserveButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -39,6 +35,16 @@ reserveButtons.forEach((btn) => {
     updateBilletSection();
   });
 });
+
+function updateBilletSection() {
+  billet.querySelector(".billets-content").innerHTML = `
+    <h3>${reservation.evenement.titre}</h3>
+    <p>${reservation.evenement.date}</p>
+    <p>${reservation.evenement.lieu}</p>
+    <p>${reservation.evenement.places} Places</p>
+    <p>${reservation.evenement.prix}€ par billet</p>
+  `;
+}
 nextButton.forEach(btn => {
   btn.addEventListener("click", () => {
     if (billet.style.display === "block") {
@@ -52,14 +58,9 @@ nextButton.forEach(btn => {
       thirdCircle.style.backgroundColor = "#0fa038ff";
       thirdLine.style.backgroundColor = "#0fa038ff";
     }
-    showData();
   });
 });
-confirmerButton.addEventListener("click", () => {
-  alert("Réservation confirmée ! Merci.");
-  fourthCircle.style.backgroundColor = "#0fa038ff";
-window.location.reload();
-});
+
 
 prevButtons.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -72,29 +73,19 @@ prevButtons.forEach(btn => {
       InformationsParticipants.style.display = "none";
       billet.style.display = "block";
       secondCircle.style.backgroundColor = "#adadadff";
-      secondLine.style.backgroundColor = "#adadadff"; 
+      secondLine.style.backgroundColor = "#adadadff";
     } else if (billet.style.display === "block") {
       billet.style.display = "none";
       choix.style.display = "block";
       firstCircle.style.backgroundColor = "#adadadff";
       firstLine.style.backgroundColor = "#adadadff";
     }
-    else  {
+    else {
       fourthCircle.style.backgroundColor = "#adadadff";
     }
-    showData();
   });
 });
 
-function updateBilletSection() {
-  billet.querySelector(".billets-content").innerHTML = `
-    <h3>${reservation.evenement.titre}</h3>
-    <p>${reservation.evenement.date}</p>
-    <p>${reservation.evenement.lieu}</p>
-    <p>${reservation.evenement.places}</p>
-    <p>${reservation.evenement.prix}€ par billet</p>
-  `;
-}
 
 let ticketCount = 1;
 const nombre = document.querySelector(".nombre");
@@ -118,8 +109,10 @@ minusBtn.addEventListener("click", () => {
   if (ticketCount > 1) {
     ticketCount--;
     ticketDisplay.textContent = ticketCount;
-    reservation.billets = ticketCount;
-    if (afficheMsg) afficheMsg.style.display = "none";
+    if (afficheMsg){
+      afficheMsg.style.display = "none";
+    }
+       
   }
 });
 
@@ -159,10 +152,8 @@ parentInputs.innerHTML = `
     </div>
   </form>
 `;
-
-const form = document.getElementById("formId");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+function FormulaData(){
+    
   const nom = document.getElementById("Nom");
   const prenom = document.getElementById("prenom");
   const email = document.getElementById("email");
@@ -172,7 +163,6 @@ form.addEventListener("submit", (event) => {
   const prenomError = document.getElementById("prenom_error");
   const emailError = document.getElementById("email_error");
   const phoneError = document.getElementById("phone_error");
-
   nomError.textContent = "";
   prenomError.textContent = "";
   emailError.textContent = "";
@@ -187,27 +177,24 @@ form.addEventListener("submit", (event) => {
     nomError.textContent = "Le nom est requis.";
     nom.style.border = "2px solid red";
     valid = false;
-    return;
+
   }
   if (prenom.value.trim() === "") {
     prenomError.textContent = "Le prénom est requis.";
     prenom.style.border = "2px solid red";
     valid = false;
-    return;
   }
   const email_check = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!email_check.test(email.value)) {
     emailError.textContent = "Adresse e-mail invalide.";
     email.style.border = "2px solid red";
     valid = false;
-    return;
   }
   const phone_check = /^\+?[0-9]{10,14}$/;
   if (!phone_check.test(phone.value)) {
     phoneError.textContent = "Numéro de téléphone invalide.";
     phone.style.border = "2px solid red";
     valid = false;
-    return;
   }
 
   const incrementIndex = document.querySelector(".incrementIndex");
@@ -223,7 +210,13 @@ form.addEventListener("submit", (event) => {
     incrementIndex.textContent = `${index}/${ticketCount} participants enregistrés`;
     form.reset();
   }
+};
+const form = document.getElementById("formId");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  FormulaData();
 });
+
 const btnshowData = document.querySelector(".Informations-participants .nextbtn");
 btnshowData.addEventListener("click", () => {
   const detailsReservation = document.getElementById("details-reservation");
@@ -231,23 +224,29 @@ btnshowData.addEventListener("click", () => {
     <h3>${reservation.evenement.titre}</h3>
     <p>Date: ${reservation.evenement.date}</p>
     <p>Lieu: ${reservation.evenement.lieu}</p>
-    <p>Nombre de billets: ${reservation.billets}</p>
-    <p>Prix total: ${reservation.billets * reservation.evenement.prix}€</p>
+    <p>Nombre de billets: ${ticketCount}</p>
+    <p>Prix total: ${ticketCount * reservation.evenement.prix}€</p>
     <div id="details-participants"></div>
   `;
   showData();
 });
+
 function showData() {
   const detailsParticipants = document.getElementById("details-participants");
-  detailsParticipants.innerHTML = reservation.participants.map((p, i) => `
+reservation.participants.forEach((particip, i) => {
+  detailsParticipants.innerHTML += `
     <div class="participant-info">
       <h4>Participant ${i + 1}</h4>
-      <p>Nom: ${p.nom}</p>
-      <p>Prénom: ${p.prenom}</p>
-      <p>Email: ${p.email}</p>
-      <p>Téléphone: ${p.phone}</p>
+      <p>Nom: ${particip.nom}</p>
+      <p>Prénom: ${particip.prenom}</p>
+      <p>Email: ${particip.email}</p>
+      <p>Téléphone: ${particip.phone}</p>
     </div>
-  `).join('');
-}
-
-
+  `;
+});
+};
+confirmerButton.addEventListener("click", () => {
+  alert("Réservation confirmée ! Merci.");
+  fourthCircle.style.backgroundColor = "#0fa038ff";
+  window.location.reload();
+});
